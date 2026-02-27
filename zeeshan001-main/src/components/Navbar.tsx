@@ -142,7 +142,7 @@ const Navbar = () => {
                     className="absolute right-0 top-12 w-56 glass-strong rounded-xl overflow-hidden shadow-2xl shadow-background/60"
                   >
                     <div className="p-4 border-b border-border/50">
-                      <p className="text-sm font-semibold">Alex Chen</p>
+                      <p className="text-sm font-semibold">zeeshan</p>
                       <p className="text-xs text-muted-foreground">AI Engineer</p>
                     </div>
                     <div className="p-2">

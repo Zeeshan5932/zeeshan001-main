@@ -12,10 +12,10 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "https://github.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
+  { icon: Github, label: "GitHub", href: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/zeeshan-younas-919a09253/" },
   { icon: Twitter, label: "Twitter / X", href: "https://x.com" },
-  { icon: Mail, label: "Email", href: "mailto:alex@aidev.com" },
+  { icon: Mail, label: "Email", href: "mailto:datascientist5932@gmail.com" },
 ];
 
 const Navbar = () => {

@@ -97,7 +97,7 @@ const HeroSection = () => {
           {/* Main heading */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] mb-6 tracking-tight">
             Hi, I'm{" "}
-            <span className="text-gradient">Alex Chen zeeshan</span>
+            <span className="text-gradient">Zeeshan </span>
             <br />
             <span className="text-foreground/70 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold block mt-4">
               AI Engineer & Machine Learning Specialist

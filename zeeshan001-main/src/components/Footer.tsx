@@ -1,10 +1,10 @@
 import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/zeeshan-younas-919a09253/", label: "LinkedIn" },
   { icon: Twitter, href: "https://x.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:alex@aidev.com", label: "Email" },
+  { icon: Mail, href: "mailto:datascientist5932@gmail.com", label: "Email" },
 ];
 
 const quickLinks = [
@@ -20,7 +20,7 @@ const Footer = () => (
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Logo + copyright */}
         <div className="text-center md:text-left">
-          <a href="#home" className="text-lg font-extrabold text-gradient">AC Vertex AI</a>
+          <a href="#home" className="text-lg font-extrabold text-gradient">Vertex AI</a>
           <p className="text-xs text-muted-foreground mt-1">
             © {new Date().getFullYear()}Zeeshan. Crafted with <Heart size={10} className="inline text-primary" /> and AI.
           </p>

@@ -1,12 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import SkillsSection from "@/components/SkillsSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import ServicesSection from "@/components/ServicesSection";
-import TechStackSection from "@/components/TechStackSection";
-import ContactSection from "@/components/ContactSection";
+import HomeHighlights from "@/components/HomeHighlights";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";
 
@@ -16,13 +10,7 @@ const Index = () => {
       <CursorGlow />
       <Navbar />
       <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ExperienceSection />
-      <ServicesSection />
-      <TechStackSection />
-      <ContactSection />
+      <HomeHighlights />
       <Footer />
     </div>
   );

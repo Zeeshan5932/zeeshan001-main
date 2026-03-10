@@ -26,10 +26,14 @@ const AboutSection = () => {
             <div className="relative">
               <div className="aspect-square max-w-md mx-auto rounded-2xl overflow-hidden glass-card glow-border">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face"
-                  alt="Zeeshan - AI Engineer"
+                  src="/profile.jpg"
+                  alt="zeeshan - AI Engineer"
                   className="w-full h-full object-cover opacity-80"
                   loading="lazy"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      "/WhatsApp%20Image%202025-11-19%20at%2021.56.01_cd61ad53.jpg";
+                  }}
                 />
               </div>
               {/* Decorative glow */}

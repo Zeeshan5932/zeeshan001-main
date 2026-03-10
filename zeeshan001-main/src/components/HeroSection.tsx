@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowDown, ExternalLink, Mail, Brain, Cpu, Code2, Sparkles, Database, Network } from "lucide-react";
 
@@ -119,20 +120,20 @@ const HeroSection = () => {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a
-              href="#projects"
+            <Link
+              to="/projects"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-primary text-primary-foreground hover:brightness-110 transition-all duration-300 glow-primary"
             >
               <ExternalLink size={16} />
               View Projects
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm glass text-foreground glow-border-hover transition-all duration-300"
             >
               <Mail size={16} />
               Contact Me
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -143,14 +144,13 @@ const HeroSection = () => {
           transition={{ delay: 1.5, duration: 0.8 }}
           className="absolute -bottom-16 left-1/2 -translate-x-1/2"
         >
-          <motion.a
-            href="#about"
+          <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+            className="text-muted-foreground/60"
           >
             <ArrowDown size={20} />
-          </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

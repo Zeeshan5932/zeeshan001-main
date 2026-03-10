@@ -1,14 +1,15 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, User, Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Skills", href: "/skills" },
+  { label: "Projects", href: "/projects" },
+  { label: "Experience", href: "/experience" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -19,11 +20,11 @@ const socialLinks = [
 ];
 
 const Navbar = () => {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeSection, setActiveSection] = useState("home");
   const profileRef = useRef<HTMLDivElement>(null);
 
   // Scroll progress + background
@@ -35,27 +36,6 @@ const Navbar = () => {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Active section detection
-  useEffect(() => {
-    const sectionIds = navItems.map((n) => n.href.slice(1));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible.length > 0) {
-          setActiveSection(visible[0].target.id);
-        }
-      },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
-    );
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
   }, []);
 
   // Click-away close for profile dropdown
@@ -87,18 +67,21 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="text-xl font-extrabold text-gradient tracking-tight">
+          <Link to="/" className="text-xl font-extrabold text-gradient tracking-tight">
             AC.
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
+              const isActive =
+                item.href === "/"
+                  ? location.pathname === "/"
+                  : location.pathname.startsWith(item.href);
               return (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
+                  to={item.href}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg ${
                     isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                   }`}
@@ -111,7 +94,7 @@ const Navbar = () => {
                     />
                   )}
                   <span className="relative z-10">{item.label}</span>
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -190,11 +173,14 @@ const Navbar = () => {
             >
               <div className="px-6 py-4 flex flex-col gap-1">
                 {navItems.map((item) => {
-                  const isActive = activeSection === item.href.slice(1);
+                  const isActive =
+                    item.href === "/"
+                      ? location.pathname === "/"
+                      : location.pathname.startsWith(item.href);
                   return (
-                    <a
+                    <Link
                       key={item.href}
-                      href={item.href}
+                      to={item.href}
                       onClick={() => setMobileOpen(false)}
                       className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                         isActive
@@ -203,7 +189,7 @@ const Navbar = () => {
                       }`}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   );
                 })}
               </div>

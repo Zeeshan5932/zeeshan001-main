@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
 
 const socialLinks = [
@@ -8,10 +9,10 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Experience", href: "/experience" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Footer = () => (
@@ -20,22 +21,22 @@ const Footer = () => (
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Logo + copyright */}
         <div className="text-center md:text-left">
-          <a href="#home" className="text-lg font-extrabold text-gradient">Vertex AI</a>
+          <Link to="/" className="text-lg font-extrabold text-gradient">Vertex AI</Link>
           <p className="text-xs text-muted-foreground mt-1">
-            © {new Date().getFullYear()}Zeeshan. Crafted with <Heart size={10} className="inline text-primary" /> and AI.
+            © {new Date().getFullYear()} Zeeshan. Crafted with <Heart size={10} className="inline text-primary" /> and AI.
           </p>
         </div>
 
         {/* Quick links */}
         <div className="flex gap-6">
           {quickLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 

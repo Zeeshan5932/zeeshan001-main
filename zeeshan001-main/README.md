@@ -1,73 +1,100 @@
-# Welcome to your Lovable project
+# Zeeshan Younas Portfolio
 
-## Project info
+Personal portfolio website for Zeeshan Younas (Data Scientist, AI Engineer, Kaggle Grandmaster).  
+Built with React + TypeScript + Vite, featuring modern UI animations, multi-page routing, and dedicated sections for projects, skills, experience, and contact.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Live Demo
 
-## How can I edit this code?
+- Portfolio: https://zeeshn-portoflio.vercel.app/
 
-There are several ways of editing your application.
+## Highlights
 
-**Use Lovable**
+- Modern responsive portfolio UI
+- Dedicated pages: Home, About, Skills, Projects, Experience, Contact
+- Animated interactions using Framer Motion
+- Project showcase with category filters and detailed modal view
+- CV section with view and download support
+- Clean component architecture with reusable UI blocks
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Featured Project Categories
 
-Changes made via Lovable will be committed automatically to this repo.
+- AI Systems
+- Machine Learning
+- Computer Vision
+- Automation
+- Data Platforms
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui (Radix primitives)
+- Framer Motion
+- React Router DOM
+- TanStack Query
+- Vitest + Testing Library
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Project Structure
 
-Follow these steps:
+```text
+src/
+	components/       # Reusable sections and UI components
+	pages/            # Route-level pages (About, Skills, Projects, etc.)
+	hooks/            # Custom hooks
+	lib/              # Utility helpers
+	test/             # Test setup and test files
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 1. Clone
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+git clone https://github.com/Zeeshan5932/ZeeshanYounas001.git
+cd zeeshan001-main
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Dev Server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open the local URL shown in terminal (usually http://localhost:5173).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - start development server
+- `npm run build` - create production build
+- `npm run build:dev` - create development-mode build
+- `npm run preview` - preview production build locally
+- `npm run lint` - run ESLint
+- `npm run test` - run tests once
+- `npm run test:watch` - run tests in watch mode
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Customization Notes
 
-## What technologies are used for this project?
+- Main routes are configured in `src/App.tsx`.
+- Project data and CV section are managed in `src/pages/ProjectsPage.tsx`.
+- Navbar branding is in `src/components/Navbar.tsx`.
+- Footer branding and social links are in `src/components/Footer.tsx`.
+- Contact details are in `src/components/ContactSection.tsx`.
 
-This project is built with:
+## Contact
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Email: zeeshanofficial01@gmail.com
+- GitHub: https://github.com/Zeeshan5932
+- LinkedIn: https://www.linkedin.com/in/zeeshan-younas-919a09253/
+- Kaggle: https://www.kaggle.com/zeeshanyounas001
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is for personal portfolio use.

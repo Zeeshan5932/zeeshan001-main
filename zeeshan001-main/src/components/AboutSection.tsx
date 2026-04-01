@@ -2,9 +2,9 @@ import ScrollReveal from "./ScrollReveal";
 import { Briefcase, FolderGit2, Users } from "lucide-react";
 
 const stats = [
-  { icon: Briefcase, value: "5+", label: "Years Experience" },
+  { icon: Briefcase, value: "1+", label: "Years Experience" },
   { icon: FolderGit2, value: "30+", label: "Projects Completed" },
-  { icon: Users, value: "20+", label: "Happy Clients" },
+  { icon: Users, value: "10+", label: "Happy Clients" },
 ];
 
 const AboutSection = () => {

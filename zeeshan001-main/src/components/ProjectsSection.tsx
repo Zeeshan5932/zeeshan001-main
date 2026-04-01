@@ -45,7 +45,7 @@ const projects: Project[] = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
-    title: "Predictive Analytics Dashboard",
+    title: "Predictive",
     description: "ML-powered business intelligence platform with automated forecasting, anomaly detection, and custom reporting.",
     longDescription: "End-to-end analytics platform that ingests business data from multiple sources, trains ensemble forecasting models, detects anomalies in real-time, and surfaces actionable predictions through interactive dashboards.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",

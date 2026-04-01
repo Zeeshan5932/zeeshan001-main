@@ -68,7 +68,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-xl font-extrabold text-gradient tracking-tight">
-            AC.
+            ZY
           </Link>
 
           {/* Desktop nav */}

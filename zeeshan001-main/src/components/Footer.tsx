@@ -21,7 +21,7 @@ const Footer = () => (
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Logo + copyright */}
         <div className="text-center md:text-left">
-          <Link to="/" className="text-lg font-extrabold text-gradient">Vertex AI</Link>
+          <Link to="/" className="text-lg font-extrabold text-gradient">Zeeshan Younas</Link>
           <p className="text-xs text-muted-foreground mt-1">
             © {new Date().getFullYear()} Zeeshan. Crafted with <Heart size={10} className="inline text-primary" /> and AI.
           </p>

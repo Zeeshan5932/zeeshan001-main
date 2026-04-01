@@ -15,7 +15,7 @@ interface Project {
   solution: string;
   liveUrl: string;
   githubUrl: string;
-  videoUrl: string;
+  videoUrl?: string;
   category: "ai" | "ml" | "cv" | "automation" | "data";
 }
 
@@ -51,6 +51,20 @@ const allProjects: Project[] = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
+    category: "ai",
+    title: "AI Attendance System",
+    description: "Monorepo attendance platform with one FastAPI backend and one React/Vite frontend.",
+    longDescription:
+      "A hybrid AI attendance solution structured as a clean monorepo with a FastAPI service layer and a React/Vite client. The system is designed for scalable attendance workflows, modern API integration, and production-friendly maintainability.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+    tech: ["FastAPI", "React", "Vite", "Python", "TypeScript"],
+    features: ["Monorepo architecture", "FastAPI backend APIs", "React/Vite frontend", "Modular attendance workflows", "Scalable deployment-ready structure"],
+    problem: "Organizations need a reliable attendance platform that is fast to maintain and easy to scale across frontend and backend teams.",
+    solution: "Implemented a hybrid architecture with clear backend/frontend separation, enabling smooth feature delivery and efficient long-term maintenance.",
+    liveUrl: "https://github.com/Zeeshan5932/hybrid-ai-attendance",
+    githubUrl: "https://github.com/Zeeshan5932/hybrid-ai-attendance"
+  },
+  {
     category: "ml",
     title: "ML Projects",
     description: "Collection of machine learning and data science projects based on Kaggle datasets.",
@@ -79,6 +93,20 @@ const allProjects: Project[] = [
     liveUrl: "https://bpfuelai001.streamlit.app/Questionnaire",
     githubUrl: "https://github.com/Zeeshan5932/BloodPressureDetectionSystem",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    category: "cv",
+    title: "Skin Cancer Detection Web App",
+    description: "Deep learning web app that classifies skin lesion images as Benign or Malignant.",
+    longDescription:
+      "A medical imaging web application using a pretrained EfficientNetB0 model to classify skin lesion images into binary classes: Benign or Malignant. The project integrates a FastAPI backend with a lightweight frontend for practical clinical-style screening workflows.",
+    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=400&fit=crop",
+    tech: ["TensorFlow", "Keras", "EfficientNetB0", "FastAPI", "HTML", "JavaScript"],
+    features: ["EfficientNetB0 transfer learning", "Binary lesion classification", "FastAPI inference endpoint", "Simple upload and prediction flow", "Deep learning CV pipeline"],
+    problem: "Early skin lesion screening can be time-consuming and difficult to scale when only manual review is available.",
+    solution: "Built a deep learning-powered classification app that provides fast Benign/Malignant predictions through an accessible web interface.",
+    liveUrl: "https://github.com/Zeeshan5932/Skin_cancer_detection",
+    githubUrl: "https://github.com/Zeeshan5932/Skin_cancer_detection"
   },
   {
     category: "cv",
@@ -226,20 +254,22 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
         </div>
 
         {/* Demo video */}
-        <div className="mb-8">
-          <h4 className="font-semibold text-sm mb-3 flex items-center gap-2">
-            <Play size={14} className="text-accent" /> Demo
-          </h4>
-          <div className="aspect-video rounded-xl overflow-hidden glass-card">
-            <iframe
-              src={project.videoUrl}
-              title={`${project.title} demo`}
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+        {project.videoUrl && (
+          <div className="mb-8">
+            <h4 className="font-semibold text-sm mb-3 flex items-center gap-2">
+              <Play size={14} className="text-accent" /> Demo
+            </h4>
+            <div className="aspect-video rounded-xl overflow-hidden glass-card">
+              <iframe
+                src={project.videoUrl}
+                title={`${project.title} demo`}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Problem & Solution */}
         <div className="grid md:grid-cols-2 gap-5 mb-8">
@@ -343,7 +373,7 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
           <Github size={12} /> GitHub
         </a>
         <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-          <Play size={12} /> Video
+          <Play size={12} /> {project.videoUrl ? "Video" : "No Video"}
         </span>
       </div>
     </div>

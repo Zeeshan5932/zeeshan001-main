@@ -53,13 +53,13 @@ const HeroSection = () => {
 
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-primary/8 rounded-full blur-[150px] animate-pulse-glow" />
+        <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-primary/14 rounded-full blur-[150px] animate-pulse-glow" />
         <div
-          className="absolute bottom-[15%] right-[15%] w-[600px] h-[600px] bg-accent/6 rounded-full blur-[150px] animate-pulse-glow"
+          className="absolute bottom-[15%] right-[15%] w-[600px] h-[600px] bg-accent/12 rounded-full blur-[150px] animate-pulse-glow"
           style={{ animationDelay: "1.5s" }}
         />
         <div
-          className="absolute top-[60%] left-[50%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] animate-pulse-glow"
+          className="absolute top-[60%] left-[50%] w-[400px] h-[400px] bg-cyan-400/10 rounded-full blur-[120px] animate-pulse-glow"
           style={{ animationDelay: "3s" }}
         />
       </div>
@@ -89,14 +89,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full glass text-xs font-semibold tracking-widest uppercase text-primary"
+            className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full glass text-xs font-semibold tracking-[0.16em] uppercase text-primary border border-primary/30"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             Available for projects
           </motion.div>
 
           {/* Main heading */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] mb-6 tracking-tight">
+          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 tracking-tight">
             Hi, I'm{" "}
             <span className="text-gradient">Zeeshan </span>
             <br />
@@ -109,7 +109,7 @@ const HeroSection = () => {
           <div className="h-8 mb-10">
             <p className="text-base md:text-lg text-muted-foreground font-light tracking-wide">
               {displayText}
-              <span className="inline-block w-[2px] h-5 bg-primary ml-1 animate-pulse" />
+              <span className="inline-block w-[2px] h-5 bg-accent ml-1 animate-pulse" />
             </p>
           </div>
 
@@ -120,20 +120,24 @@ const HeroSection = () => {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link
-              to="/projects"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-primary text-primary-foreground hover:brightness-110 transition-all duration-300 glow-primary"
-            >
-              <ExternalLink size={16} />
-              View Projects
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm glass text-foreground glow-border-hover transition-all duration-300"
-            >
-              <Mail size={16} />
-              Contact Me
-            </Link>
+            <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                to="/projects"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-primary text-primary-foreground hover:brightness-110 transition-all duration-300 glow-primary"
+              >
+                <ExternalLink size={16} />
+                View Projects
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm glass text-foreground glow-border-hover transition-all duration-300"
+              >
+                <Mail size={16} />
+                Contact Me
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
 

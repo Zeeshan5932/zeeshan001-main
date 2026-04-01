@@ -13,10 +13,10 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md" },
+  { icon: Github, label: "GitHub", href: "https://github.com/Zeeshan5932" },
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/zeeshan-younas-919a09253/" },
-  { icon: Twitter, label: "Twitter / X", href: "https://x.com" },
-  { icon: Mail, label: "Email", href: "mailto:datascientist5932@gmail.com" },
+  { icon: Twitter, label: "Kaggle", href: "https://www.kaggle.com/zeeshanyounas001" },
+  { icon: Mail, label: "Email", href: "mailto:zeeshanofficial01@gmail.com" },
 ];
 
 const Navbar = () => {
@@ -62,12 +62,12 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "glass-strong shadow-2xl shadow-background/50" : "bg-transparent"
+          scrolled ? "glass-strong shadow-2xl shadow-background/50 border-b border-border/40" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-xl font-extrabold text-gradient tracking-tight">
+          <Link to="/" className="font-display text-xl font-bold text-gradient tracking-tight">
             ZY
           </Link>
 
@@ -89,7 +89,7 @@ const Navbar = () => {
                   {isActive && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute inset-0 rounded-lg bg-secondary/60"
+                      className="absolute inset-0 rounded-lg bg-primary/15 border border-primary/30"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -125,8 +125,8 @@ const Navbar = () => {
                     className="absolute right-0 top-12 w-56 glass-strong rounded-xl overflow-hidden shadow-2xl shadow-background/60"
                   >
                     <div className="p-4 border-b border-border/50">
-                      <p className="text-sm font-semibold">zeeshan</p>
-                      <p className="text-xs text-muted-foreground">AI Engineer</p>
+                      <p className="text-sm font-semibold">Zeeshan Younas</p>
+                      <p className="text-xs text-muted-foreground">Data Scientist and AI Engineer</p>
                     </div>
                     <div className="p-2">
                       {socialLinks.map((link) => (

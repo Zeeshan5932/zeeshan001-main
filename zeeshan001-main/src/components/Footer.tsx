@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md", label: "GitHub" },
+  { icon: Github, href: "https://github.com/Zeeshan5932", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/zeeshan-younas-919a09253/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:datascientist5932@gmail.com", label: "Email" },
+  { icon: Twitter, href: "https://www.kaggle.com/zeeshanyounas001", label: "Kaggle" },
+  { icon: Mail, href: "mailto:zeeshanofficial01@gmail.com", label: "Email" },
 ];
 
 const quickLinks = [
@@ -16,12 +16,13 @@ const quickLinks = [
 ];
 
 const Footer = () => (
-  <footer className="border-t border-border/50 py-10 px-6">
+  <footer className="border-t border-border/50 py-10 px-6 relative overflow-hidden">
+    <div className="absolute inset-0 gradient-mesh opacity-60 pointer-events-none" />
     <div className="max-w-6xl mx-auto">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 glass-card rounded-2xl px-6 py-5">
         {/* Logo + copyright */}
         <div className="text-center md:text-left">
-          <Link to="/" className="text-lg font-extrabold text-gradient">Zeeshan Younas</Link>
+          <Link to="/" className="font-display text-lg font-bold text-gradient">Zeeshan Younas</Link>
           <p className="text-xs text-muted-foreground mt-1">
             © {new Date().getFullYear()} Zeeshan. Crafted with <Heart size={10} className="inline text-primary" /> and AI.
           </p>

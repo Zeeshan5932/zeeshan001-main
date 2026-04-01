@@ -101,7 +101,7 @@ const HeroSection = () => {
             <span className="text-gradient">Zeeshan </span>
             <br />
             <span className="text-foreground/70 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold block mt-4">
-              AI Engineer & Machine Learning Specialist
+              Data Scientist, AI Engineer, and Kaggle Grandmaster
             </span>
           </h1>
 

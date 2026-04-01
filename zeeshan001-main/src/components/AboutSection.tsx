@@ -2,9 +2,9 @@ import ScrollReveal from "./ScrollReveal";
 import { Briefcase, FolderGit2, Users } from "lucide-react";
 
 const stats = [
-  { icon: Briefcase, value: "1+", label: "Years Experience" },
+  { icon: Briefcase, value: "2+", label: "Years Experience" },
   { icon: FolderGit2, value: "30+", label: "Projects Completed" },
-  { icon: Users, value: "10+", label: "Happy Clients" },
+  { icon: Users, value: "Top 152", label: "Kaggle Global Rank" },
 ];
 
 const AboutSection = () => {
@@ -45,14 +45,14 @@ const AboutSection = () => {
           <ScrollReveal direction="right" delay={0.15}>
             <div>
               <p className="text-muted-foreground leading-relaxed mb-6 text-base">
-                I'm a passionate AI Engineer with over 1 years of experience building intelligent systems
-                that solve real-world problems. From designing neural network architectures to deploying
-                production ML pipelines, I transform complex data into scalable AI solutions.
+                I'm Zeeshan Younas, a Data Scientist and AI Engineer currently pursuing a BS in Data Science.
+                I build practical AI systems that solve real-world problems, from automation and LLM workflows
+                to computer vision and production-ready machine learning applications.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-                Currently focused on large language models, retrieval-augmented generation, and building
-                AI-native applications that push the boundaries of what's possible. I believe in writing
-                clean, maintainable code and building systems that are both powerful and elegant.
+                My focus areas include LLM systems, RAG pipelines, FastAPI services, and intelligent automation.
+                I am also an active Kaggle contributor with Grandmaster-level performance and a strong emphasis
+                on clean, maintainable engineering for real deployment.
               </p>
               <a
                 href="#contact"

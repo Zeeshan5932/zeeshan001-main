@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, X, ChevronRight, Play, Trophy, Brain, Layers, Cpu } from "lucide-react";
+import { ExternalLink, Github, X, ChevronRight, Play, Layers, Bot, Brain, Camera, Workflow, Database, FileText, Download } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -16,174 +16,164 @@ interface Project {
   liveUrl: string;
   githubUrl: string;
   videoUrl: string;
-  category: "kaggle" | "ml" | "dl" | "ai";
+  category: "ai" | "ml" | "cv" | "automation" | "data";
 }
 
 const allProjects: Project[] = [
-  // ── Kaggle ──────────────────────────────────────────────────────────
-  {
-    category: "kaggle",
-    title: "Titanic Survival Prediction",
-    description: "Classic Kaggle competition — feature engineering + ensemble methods for top-tier accuracy.",
-    longDescription:
-      "End-to-end Kaggle solution including advanced feature engineering (title extraction, family size, cabin deck), stacked ensemble of XGBoost, LightGBM, and Random Forest, achieving 82% accuracy and top 10% leaderboard position.",
-    image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=600&h=400&fit=crop",
-    tech: ["Python", "XGBoost", "LightGBM", "Pandas", "Scikit-learn"],
-    features: ["Feature engineering pipeline", "Stacked ensemble model", "Cross-validation strategy", "Leaderboard top 10%", "Automated EDA report"],
-    problem: "Predict passenger survival on the Titanic using structured passenger data with significant missing values.",
-    solution: "Built a robust preprocessing pipeline and stacked classifier ensemble that captured non-linear interactions between features, pushing accuracy well above the baseline.",
-    liveUrl: "https://www.kaggle.com/",
-    githubUrl: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    category: "kaggle",
-    title: "House Price Prediction",
-    description: "Advanced regression techniques on Ames Housing dataset — RMSE in top 15%.",
-    longDescription:
-      "Applied 80+ feature transformations, log-normalization, and regularised regression (Ridge, Lasso, ElasticNet) combined with gradient boosting for state-of-the-art RMSE on the Ames Housing competition.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
-    tech: ["Python", "Ridge/Lasso", "XGBoost", "Seaborn", "Scikit-learn"],
-    features: ["80+ engineered features", "Log-normalisation", "Regularised regression", "Gradient boosting blend", "SHAP value analysis"],
-    problem: "Predict final sale prices for residential homes given 79 explanatory variables.",
-    solution: "Created an extensive feature engineering notebook and blended stacking model that scored RMSE of 0.113, placing in the top 15% globally.",
-    liveUrl: "https://www.kaggle.com/",
-    githubUrl: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  // ── Machine Learning ─────────────────────────────────────────────────
-  {
-    category: "ml",
-    title: "Predictive Analytics Dashboard",
-    description: "ML-powered business intelligence platform with automated forecasting and anomaly detection.",
-    longDescription:
-      "End-to-end analytics platform that ingests business data from multiple sources, trains ensemble forecasting models, detects anomalies in real-time, and surfaces actionable predictions through interactive Streamlit dashboards.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    tech: ["TensorFlow", "Streamlit", "Pandas", "Plotly", "Airflow"],
-    features: ["Auto-retraining pipeline", "Anomaly detection alerts", "Custom metric builder", "Exportable PDF reports", "Multi-source data ingestion"],
-    problem: "Decision makers lacked real-time predictive insights, and existing BI tools couldn't automatically forecast or detect unusual patterns.",
-    solution: "Created an automated ML pipeline with Airflow orchestration that continuously retrains on new data, achieving 94% forecast accuracy and sub-minute anomaly detection.",
-    liveUrl: "https://example.com/analytics",
-    githubUrl: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    category: "ml",
-    title: "Sentiment_Analysis_app",
-    description: "ML-based Sentiment Analysis app that classifies Twitter text as positive, negative, or neutral using NLP.",
-    longDescription:
-      "This project is a Sentiment Analysis application built using Natural Language Processing and machine learning techniques. The model was trained on a Twitter dataset to automatically classify tweets into positive, negative, or neutral sentiments. A simple frontend interface allows users to input text and instantly see the predicted sentiment generated by the trained model.",
-    image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=600&h=400&fit=crop",
-    tech: ["Python", "Scikit-learn", "FastAPI", "Streamlit", "NLP"],
-    features: [
-      "Text sentiment prediction in real time",
-      "Classifies text as positive, negative, or neutral",
-      "NLP-based text preprocessing",
-      "Twitter dataset trained model",
-      "Simple frontend input interface",
-    ],
-    problem:
-      "Understanding public opinion from large amounts of social media text is difficult and time-consuming when done manually.",
-    solution:
-      "This app automates sentiment detection by using an NLP-trained model on Twitter data, helping users quickly analyze emotions and opinions from text input.",
-    liveUrl: "https://twittercommentanalysis.streamlit.app/",
-    githubUrl: "https://github.com/Zeeshan5932/Sentiment_Analysis_app",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    category: "ml",
-    title: "Customer Churn Predictor",
-    description: "End-to-end churn prediction system deployed via FastAPI with real-time scoring endpoint.",
-    longDescription:
-      "Trained on 500K+ customer records, this pipeline handles class imbalance via SMOTE, selects top features with mutual information, and serves predictions through a FastAPI micro-service with sub-10ms latency.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    tech: ["Scikit-learn", "FastAPI", "SMOTE", "MLflow", "Docker"],
-    features: ["SMOTE class balancing", "Feature selection pipeline", "REST API endpoint", "MLflow experiment tracking", "Docker deployment"],
-    problem: "Telecom client needed to proactively identify at-risk subscribers before they churned, saving millions in retention costs.",
-    solution: "Built a production churn scorer achieving AUC 0.91, integrated directly into the CRM, reducing churn rate by 18% in the first quarter.",
-    liveUrl: "https://example.com/churn",
-    githubUrl: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  // ── Deep Learning ─────────────────────────────────────────────────────
-  {
-    category: "dl",
-    title: "Brain Tumor Detection (CNN)",
-    description: "CNN-based MRI classification system achieving 86% accuracy — deployed for clinical screening.",
-    longDescription:
-      "ResNet-50 fine-tuned on 3,000+ MRI scans across 4 tumour classes. Includes Grad-CAM visualisations for model explainability, data augmentation pipeline, and a Streamlit demo for radiologist review.",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop",
-    tech: ["PyTorch", "ResNet-50", "Grad-CAM", "Streamlit", "torchvision"],
-    features: ["86% classification accuracy", "Grad-CAM heatmaps", "4-class tumour detection", "Data augmentation pipeline", "Clinical Streamlit UI"],
-    problem: "Early and accurate detection of brain tumours from MRI scans is critical but requires scarce specialist radiologist time.",
-    solution: "Fine-tuned ResNet-50 with transfer learning and implemented Grad-CAM explainability, making model decisions transparent for clinical validation.",
-    liveUrl: "https://example.com/brain-tumor",
-    githubUrl: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    category: "dl",
-    title: "Neural Style Transfer Engine",
-    description: "Real-time artistic style transfer using deep neural networks with GPU acceleration.",
-    longDescription:
-      "A production-grade neural style transfer system that processes images in real-time using optimized VGG-based CNNs. Supports batch processing, 15+ artistic styles, and exposes a REST API for integration.",
-    image: "https://images.unsplash.com/photo-1547954575-855750c57bd3?w=600&h=400&fit=crop",
-    tech: ["PyTorch", "CUDA", "FastAPI", "React", "Docker"],
-    features: ["Real-time GPU processing", "15+ pre-trained style models", "REST API endpoint", "Batch processing queue", "Custom style training"],
-    problem: "Artists and designers needed an accessible tool to apply artistic styles to images without expensive GPU hardware.",
-    solution: "Built an intuitive web interface backed by optimized neural networks that can process images in under 2 seconds, with a scalable cloud architecture.",
-    liveUrl: "https://example.com/style-transfer",
-    githubUrl: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  // ── AI Projects ──────────────────────────────────────────────────────
   {
     category: "ai",
-    title: "Conversational AI Platform",
-    description: "Enterprise-grade chatbot platform with multi-turn dialogue, context awareness, and human handoff.",
+    title: "Budget Management System",
+    description: "AI-powered finance app with personalized insights and automation.",
     longDescription:
-      "A scalable conversational AI system supporting 12 languages, persistent context tracking across sessions, and intelligent routing to human agents when confidence drops below threshold.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-    tech: ["LangChain", "OpenAI", "Python", "PostgreSQL", "Redis"],
-    features: ["Multi-turn context tracking", "12-language support", "Smart human handoff", "Analytics dashboard", "Custom knowledge base"],
-    problem: "Businesses needed intelligent customer support that could handle complex, multi-step queries without human intervention.",
-    solution: "Developed a RAG-based system with semantic search, dynamic context windows, and a confidence-based routing engine that reduced support tickets by 60%.",
-    liveUrl: "https://example.com/chatbot",
-    githubUrl: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "An AI finance assistant that tracks spending patterns, generates personalized insights, and automates routine money management actions with LLM-backed workflows.",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+    tech: ["Python", "LangChain", "OpenAI"],
+    features: ["Personalized spending insights", "Automated budgeting flows", "AI-based financial guidance", "Clean dashboard UX", "Faster decision support"],
+    problem: "Manual expense tracking and static finance tools make it difficult for users to understand and improve money habits.",
+    solution: "Built an AI-powered budgeting assistant that analyzes user inputs and automates recommendations to reduce effort and improve consistency.",
+    liveUrl: "https://euphonious-sunburst-7f01cd.netlify.app/",
+    githubUrl: "https://github.com/Zeeshan5932/FinanceAi",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     category: "ai",
-    title: "AI Automation Workflows (n8n)",
-    description: "End-to-end AI automation pipelines integrating LLMs, APIs, and business tools — 50% manual work reduced.",
+    title: "AI Travel Agent",
+    description: "AI-powered voice-based travel assistant with crypto booking via Crossmint.",
     longDescription:
-      "Architected n8n-based automation workflows connecting OpenAI, Slack, CRM systems, and custom APIs. Saved 30+ hours/week of manual operations through intelligent routing, categorisation, and auto-responses.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
-    tech: ["n8n", "OpenAI", "FastAPI", "Selenium", "BeautifulSoup"],
-    features: ["LLM-powered routing", "30+ hours/week saved", "20+ data source connectors", "Real-time Slack alerts", "Custom FastAPI services"],
-    problem: "Operations team spent 30+ hours/week on repetitive data gathering, categorisation, and reporting tasks.",
-    solution: "Designed n8n workflows with embedded LLM decision nodes that autonomously handled 80% of routine tasks, surfacing only edge cases for human review.",
-    liveUrl: "https://example.com/automation",
-    githubUrl: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "A voice-first travel assistant orchestrated using Coral Protocol, combining itinerary intelligence, travel recommendations, and blockchain-enabled booking workflows with Crossmint.",
+    image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&h=400&fit=crop",
+    tech: ["Python", "FastAPI", "Node.js", "OpenAI"],
+    features: ["Voice-enabled assistant", "Travel planning orchestration", "Crypto booking integration", "Fast API responses", "Hackathon-ready architecture"],
+    problem: "Travel planning and booking are fragmented across tools and often lack personalized conversational support.",
+    solution: "Created a unified AI travel flow with voice interaction and crypto-compatible booking, improving planning speed and user convenience.",
+    liveUrl: "https://the-internet-of-agents-hackathon.vercel.app/",
+    githubUrl: "https://github.com/Zeeshan5932/The_INTERNET_OF_AGENTS_HACKATHON",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
+  {
+    category: "ml",
+    title: "ML Projects",
+    description: "Collection of machine learning and data science projects based on Kaggle datasets.",
+    longDescription:
+      "A repository of practical ML implementations spanning regression, classification, feature engineering, and end-to-end model workflows using real competition-style datasets.",
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop",
+    tech: ["Python", "Machine Learning", "Deep Learning"],
+    features: ["Kaggle-based datasets", "Multiple ML workflows", "Reusable notebooks", "Data preprocessing examples", "Model comparison experiments"],
+    problem: "Learners and teams need a practical project bank to understand real ML pipelines from data preparation to evaluation.",
+    solution: "Compiled and structured multiple ML projects into one repository for faster learning, experimentation, and portfolio demonstration.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    category: "cv",
+    title: "Blood Pressure Detector",
+    description: "Real-time webcam health analyzer with intelligent blood pressure insights.",
+    longDescription:
+      "A Streamlit-based health screening application that leverages computer vision and machine learning signals from webcam input to provide blood pressure-related risk indicators and guidance.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+    tech: ["Streamlit", "OpenCV", "Machine Learning"],
+    features: ["Webcam signal processing", "Real-time analysis", "Interactive questionnaire", "Health insight generation", "Simple user workflow"],
+    problem: "Users need quick, accessible preliminary health checks without specialized devices for every basic screening.",
+    solution: "Developed a CV-assisted health app that estimates BP-related indicators and presents immediate, understandable feedback.",
+    liveUrl: "https://bpfuelai001.streamlit.app/Questionnaire",
+    githubUrl: "https://github.com/Zeeshan5932/BloodPressureDetectionSystem",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    category: "cv",
+    title: "Object-Detection-using-Yollo-model",
+    description: "Streamlit object detection application powered by YOLOv8 models from Ultralytics.",
+    longDescription:
+      "A comprehensive computer vision app with an intuitive UI for image upload, object detection, confidence tuning, and visualized results using YOLOv8.",
+    image: "https://images.unsplash.com/photo-1581090700227-1e8e8f0f73f0?w=600&h=400&fit=crop",
+    tech: ["Python", "Deep Learning", "Streamlit", "YOLOv8"],
+    features: ["Ultralytics YOLOv8 backend", "Image upload workflow", "Configurable confidence thresholds", "Detection result visualization", "User-friendly Streamlit interface"],
+    problem: "Many users need object detection capabilities but face setup complexity for model inference and visualization.",
+    solution: "Built a ready-to-use Streamlit app around YOLOv8 so users can run detections quickly without complex local setup.",
+    liveUrl: "https://github.com/Zeeshan5932/Object-Detection-using-Yollo-model",
+    githubUrl: "https://github.com/Zeeshan5932/Object-Detection-using-Yollo-model",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    category: "ai",
+    title: "ATSResumeChecker",
+    description: "Comprehensive web app that analyzes resumes for ATS compatibility.",
+    longDescription:
+      "A resume intelligence platform that scores and reviews CVs for ATS readiness, returning structured feedback and recommendations for keyword coverage, formatting, and impact.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+    tech: ["LangChain", "OpenAI", "Flask"],
+    features: ["ATS compatibility analysis", "Detailed recommendation engine", "Skill and keyword review", "Actionable resume feedback", "Job-seeker focused flow"],
+    problem: "Job seekers often submit resumes that get filtered out by ATS systems before reaching recruiters.",
+    solution: "Implemented an AI resume checker that surfaces weak sections and provides targeted improvements to increase ATS match quality.",
+    liveUrl: "https://zeeshn-portoflio.vercel.app/",
+    githubUrl: "https://github.com/Zeeshan5932/ATSResumeChecker",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    category: "automation",
+    title: "Web-Scrapping",
+    description: "End-to-end pipeline for scraping, parsing, and structuring business notices.",
+    longDescription:
+      "A robust scraping system using browser automation and parsing logic to collect and normalize unstructured business notice data into clean, query-ready formats.",
+    image: "https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=600&h=400&fit=crop",
+    tech: ["Python", "Selenium", "Regex"],
+    features: ["Automated data collection", "Structured parsing pipeline", "Regex-powered extraction", "Data cleaning stages", "Reusable scraping modules"],
+    problem: "Critical business notices were spread across non-standard pages and difficult to aggregate manually.",
+    solution: "Developed an automated scraping and parsing pipeline that converts raw web content into structured, analysis-ready outputs.",
+    liveUrl: "https://github.com/Zeeshan5932/Web-Scrapping",
+    githubUrl: "https://github.com/Zeeshan5932/Web-Scrapping",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    category: "ai",
+    title: "Clinic AI Receptionist Agent",
+    description: "Production-ready AI receptionist for clinics and aesthetic centers with modern monorepo architecture.",
+    longDescription:
+      "A scalable AI receptionist platform with separated frontend and backend modules, focused on appointment workflows, patient communication, and clinic automation in a production-friendly structure.",
+    image: "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?w=600&h=400&fit=crop",
+    tech: ["Python", "FastAPI", "React", "AI Agents"],
+    features: ["Clinic-focused receptionist logic", "Scalable monorepo setup", "Frontend/backend separation", "Automation-ready design", "Production-grade structure"],
+    problem: "Clinics need reliable front-desk automation that can handle repetitive patient interactions without losing context.",
+    solution: "Built a modular AI receptionist architecture that supports maintainable scaling and streamlined patient communication flows.",
+    liveUrl: "https://github.com/Zeeshan5932/clinic-ai-agent",
+    githubUrl: "https://github.com/Zeeshan5932/clinic-ai-agent",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    category: "data",
+    title: "DataCanvas Nexus",
+    description: "AI-powered data profiling, BI generation, model lab, and anomaly detection workspace.",
+    longDescription:
+      "A complete data intelligence platform featuring health scoring, report generation, natural-language BI dashboard creation, visualization lab, preprocessing studio, model lab, anomaly detection, and export center for analytics artifacts.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
+    tech: ["Python 3.10+", "Streamlit", "Pandas", "NumPy", "Scikit-learn", "Plotly", "Preplify", "Groq SDK", "python-dotenv"],
+    features: ["Data health scoring", "AI BI dashboard generation", "Visualization and PCA labs", "Preprocessing and model studio", "Anomaly workflow and rich exports"],
+    problem: "Teams need one workspace that connects profiling, modeling, BI, and exports without jumping across multiple disconnected tools.",
+    solution: "Created a unified Streamlit-based data platform that brings profiling, model experimentation, anomaly detection, and reporting into one guided workflow.",
+    liveUrl: "https://github.com/Zeeshan5932/preplify_streamlit_app",
+    githubUrl: "https://github.com/Zeeshan5932/preplify_streamlit_app",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  }
 ];
 
 const categories = [
   { key: "all", label: "All Projects", icon: Layers, count: allProjects.length },
-  { key: "kaggle", label: "Kaggle Projects", icon: Trophy, count: allProjects.filter((p) => p.category === "kaggle").length },
+  { key: "ai", label: "AI Systems", icon: Bot, count: allProjects.filter((p) => p.category === "ai").length },
   { key: "ml", label: "Machine Learning", icon: Brain, count: allProjects.filter((p) => p.category === "ml").length },
-  { key: "dl", label: "Deep Learning", icon: Cpu, count: allProjects.filter((p) => p.category === "dl").length },
-  { key: "ai", label: "AI Projects", icon: Layers, count: allProjects.filter((p) => p.category === "ai").length },
+  { key: "cv", label: "Computer Vision", icon: Camera, count: allProjects.filter((p) => p.category === "cv").length },
+  { key: "automation", label: "Automation", icon: Workflow, count: allProjects.filter((p) => p.category === "automation").length },
+  { key: "data", label: "Data Platforms", icon: Database, count: allProjects.filter((p) => p.category === "data").length }
 ] as const;
 
 type Category = (typeof categories)[number]["key"];
 
 const categoryMeta: Record<string, { color: string; label: string }> = {
-  kaggle: { color: "bg-amber-500/15 text-amber-400 border-amber-500/30", label: "Kaggle" },
-  ml: { color: "bg-blue-500/15 text-blue-400 border-blue-500/30", label: "Machine Learning" },
-  dl: { color: "bg-violet-500/15 text-violet-400 border-violet-500/30", label: "Deep Learning" },
   ai: { color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30", label: "AI" },
+  ml: { color: "bg-blue-500/15 text-blue-400 border-blue-500/30", label: "Machine Learning" },
+  cv: { color: "bg-rose-500/15 text-rose-400 border-rose-500/30", label: "Computer Vision" },
+  automation: { color: "bg-amber-500/15 text-amber-400 border-amber-500/30", label: "Automation" },
+  data: { color: "bg-cyan-500/15 text-cyan-400 border-cyan-500/30", label: "Data Platform" }
 };
 
 // ── Modal ─────────────────────────────────────────────────────────────────
@@ -374,9 +364,39 @@ const ProjectsPage = () => {
     <PageLayout
       badge="Portfolio"
       title={<>Featured <span className="text-gradient">Projects</span></> as any}
-      subtitle="AI, ML, Deep Learning and Kaggle competition projects — from research to production."
+      subtitle="A curated selection of AI, ML, computer vision, automation, and data platform projects."
     >
       <section className="px-6 pb-32 max-w-6xl mx-auto">
+        {/* CV section */}
+        <ScrollReveal>
+          <div className="mb-10 glass-card rounded-2xl p-6 md:p-7 border border-border/50">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Curriculum Vitae</p>
+                <h3 className="text-xl md:text-2xl font-bold mb-1">Zeeshan Younas - Resume</h3>
+                <p className="text-sm text-muted-foreground">View or download my latest CV with work experience, skills, and achievements.</p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="/Zeeshan_Resume_ats.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-primary text-primary-foreground hover:brightness-110 transition-all glow-primary"
+                >
+                  <FileText size={14} /> View CV
+                </a>
+                <a
+                  href="/Zeeshan_Resume_ats.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold glass text-foreground glow-border-hover transition-all"
+                >
+                  <Download size={14} /> Download CV
+                </a>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+
         {/* Category filter tabs */}
         <ScrollReveal>
           <div className="flex flex-wrap justify-center gap-2 mb-14">

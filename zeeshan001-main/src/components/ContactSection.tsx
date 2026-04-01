@@ -44,7 +44,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Email</p>
-                    <p className="text-sm font-medium">datascientist5932@gmail.com</p>
+                    <p className="text-sm font-medium">zeeshanofficial01@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -60,10 +60,10 @@ const ContactSection = () => {
 
               <div className="flex gap-3">
                 {[
-                  { icon: Github, href: "https://github.com/Zeeshan5932/ZeeshanYounas001/blob/main/README.md", label: "GitHub" },
+                  { icon: Github, href: "https://github.com/Zeeshan5932/ZeeshanYounas001", label: "GitHub" },
                   { icon: Linkedin, href: "https://www.linkedin.com/in/zeeshan-younas-919a09253/", label: "LinkedIn" },
-                  { icon: Twitter, href: "https://x.com", label: "Twitter" },
-                  { icon: Mail, href: "mailto:datascientist5932@gmail.com", label: "Email" },
+                  { icon: Twitter, href: "https://www.kaggle.com/zeeshanyounas001", label: "Kaggle" },
+                  { icon: Mail, href: "mailto:zeeshanofficial01@gmail.com", label: "Email" },
                 ].map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}

@@ -114,7 +114,7 @@ const allProjects: Project[] = [
     description: "Streamlit object detection application powered by YOLOv8 models from Ultralytics.",
     longDescription:
       "A comprehensive computer vision app with an intuitive UI for image upload, object detection, confidence tuning, and visualized results using YOLOv8.",
-    image: "https://images.unsplash.com/photo-1581090700227-1e8e8f0f73f0?w=600&h=400&fit=crop",
+    image: "https://docs.ultralytics.com/images/bus.jpg",
     tech: ["Python", "Deep Learning", "Streamlit", "YOLOv8"],
     features: ["Ultralytics YOLOv8 backend", "Image upload workflow", "Configurable confidence thresholds", "Detection result visualization", "User-friendly Streamlit interface"],
     problem: "Many users need object detection capabilities but face setup complexity for model inference and visualization.",
@@ -223,7 +223,14 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
     >
       {/* Hero image */}
       <div className="relative">
-        <img src={project.image} alt={project.title} className="w-full h-60 md:h-72 object-cover rounded-t-2xl" />
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-60 md:h-72 object-cover rounded-t-2xl"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent rounded-t-2xl" />
         <button
           onClick={onClose}
@@ -333,6 +340,9 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
         alt={project.title}
         className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105"
         loading="lazy"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
       <span

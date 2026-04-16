@@ -6,8 +6,10 @@ import CursorGlow from "@/components/CursorGlow";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background relative overflow-x-hidden">
+    <div className="min-h-screen bg-background relative isolate overflow-x-hidden">
       <CursorGlow />
+      <div className="aurora-bg" />
+      <div className="noise-overlay" />
       <Navbar />
       <HeroSection />
       <HomeHighlights />

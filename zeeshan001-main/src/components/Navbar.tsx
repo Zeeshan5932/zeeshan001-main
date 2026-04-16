@@ -85,7 +85,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
           {/* Logo */}
           <Link to="/" className="group flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full glass border border-border/60 text-gradient font-display text-lg font-bold shadow-lg theme-transition group-hover:scale-105">
+            <span className="flex h-10 min-w-10 items-center justify-center rounded-xl bg-primary/14 border border-primary/35 text-primary font-display text-sm font-extrabold px-2 shadow-lg theme-transition group-hover:-translate-y-0.5">
               ZY
             </span>
             <div className="hidden sm:block leading-tight">

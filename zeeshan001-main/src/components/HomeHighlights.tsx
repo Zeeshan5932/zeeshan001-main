@@ -3,6 +3,25 @@ import { motion } from "framer-motion";
 import { Brain, FolderGit2, Briefcase, Mail, ArrowRight, Cpu, Code2, BarChart3, Bot } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
+const sectionHeaderVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const sectionHeaderItem = {
+  hidden: { opacity: 0, y: 14 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: [0.25, 0.4, 0.25, 1] },
+  },
+};
+
 const highlights = [
   {
     icon: Brain,
@@ -110,21 +129,27 @@ const HomeHighlights = () => {
 
         {/* Section header */}
         <ScrollReveal>
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Explore</p>
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
+          <motion.div
+            variants={sectionHeaderVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="text-center mb-14"
+          >
+            <motion.p variants={sectionHeaderItem} className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Explore</motion.p>
+            <motion.h2 variants={sectionHeaderItem} className="font-display text-3xl md:text-5xl font-bold mb-4">
               What I <span className="text-gradient">Do</span>
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-sm md:text-base">
+            </motion.h2>
+            <motion.p variants={sectionHeaderItem} className="text-muted-foreground max-w-xl mx-auto text-sm md:text-base">
               Click any card to explore a full dedicated page.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </ScrollReveal>
 
         {/* Highlight cards grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {highlights.map((item, i) => (
-            <ScrollReveal key={item.label} delay={i * 0.1}>
+            <ScrollReveal key={item.label} delay={i * 0.07}>
               <Link to={item.href} className="block h-full group">
                 <motion.div
                   whileHover={{ y: -7, rotateX: 2, rotateY: -2 }}

@@ -613,25 +613,33 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
   <motion.div
     onClick={onClick}
     className="glass-card rounded-2xl overflow-hidden cursor-pointer glow-border-hover transition-all duration-400 group h-full flex flex-col"
-    whileHover={{ y: -5 }}
-    transition={{ duration: 0.25 }}
+    whileHover={{ y: -8, scale: 1.01 }}
+    transition={{ duration: 0.25, ease: [0.25, 0.4, 0.25, 1] }}
   >
     <div className="overflow-hidden relative">
       <img
         src={project.image}
         alt={project.title}
-        className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105"
+        className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
         loading="lazy"
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-background/20 to-transparent" />
       <span
         className={`absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${categoryMeta[project.category].color}`}
       >
         {categoryMeta[project.category].label}
       </span>
+      <div className="absolute top-3 right-3 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-background/70 border border-border/60 text-foreground/90">
+          {project.tech.length} tech
+        </span>
+        <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-background/70 border border-border/60 text-foreground/90">
+          {project.features.length} features
+        </span>
+      </div>
     </div>
     <div className="p-5 flex-1 flex flex-col">
       <h3 className="text-base font-bold mb-1.5 group-hover:text-primary transition-colors">

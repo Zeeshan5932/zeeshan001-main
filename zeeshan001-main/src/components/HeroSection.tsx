@@ -19,6 +19,32 @@ const typingTexts = [
   "Deploying AI solutions worldwide.",
 ];
 
+const proofChips = [
+  "30+ projects shipped",
+  "Kaggle Grandmaster",
+  "FastAPI + LLM specialist",
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.25, 0.4, 0.25, 1] },
+  },
+};
+
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -80,15 +106,13 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.25, 0.4, 0.25, 1] }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
+            variants={itemVariants}
             className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full glass text-xs font-semibold tracking-[0.16em] uppercase text-primary border border-primary/30"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -96,28 +120,26 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main heading */}
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 tracking-tight">
+          <motion.h1 variants={itemVariants} className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 tracking-tight">
             Hi, I'm{" "}
             <span className="text-gradient">Zeeshan </span>
             <br />
             <span className="text-foreground/70 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold block mt-4">
               Data Scientist, AI Engineer, and Kaggle Grandmaster
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Typing text */}
-          <div className="h-8 mb-10">
+          <motion.div variants={itemVariants} className="h-8 mb-10">
             <p className="text-base md:text-lg text-muted-foreground font-light tracking-wide">
               {displayText}
               <span className="inline-block w-[2px] h-5 bg-accent ml-1 animate-pulse" />
             </p>
-          </div>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }}>
@@ -138,6 +160,17 @@ const HeroSection = () => {
                 Contact Me
               </Link>
             </motion.div>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="mt-9 flex flex-wrap justify-center gap-2.5">
+            {proofChips.map((chip) => (
+              <span
+                key={chip}
+                className="px-3 py-1.5 rounded-full text-[11px] font-semibold tracking-wide bg-background/60 border border-border/60 text-muted-foreground"
+              >
+                {chip}
+              </span>
+            ))}
           </motion.div>
         </motion.div>
 

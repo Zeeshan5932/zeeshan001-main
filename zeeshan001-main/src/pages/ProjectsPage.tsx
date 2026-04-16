@@ -124,6 +124,49 @@ const allProjects: Project[] = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
+    category: "cv",
+    title: "Medical Image Analysis System",
+    description: "FastAPI + Gemini app that generates clinically focused medical image descriptions with validation and safe checks.",
+    longDescription:
+      "A FastAPI web application that accepts medical image uploads, validates file type and size, and generates detailed clinical-style descriptions using Google Gemini models. The pipeline includes a medical relevance check before showing results, retries with fallback model handling during temporary overload, and polished report formatting for readability. The frontend uses Jinja2 templates with image preview, loading states, and clear success/error feedback, while API credentials are securely loaded from environment variables.",
+    image: "https://images.unsplash.com/photo-1581595219315-a187dd40c322?w=600&h=400&fit=crop",
+    tech: ["FastAPI", "Google GenAI", "Jinja2", "Python", "HTML"],
+    features: ["Image upload validation (type and size)", "Gemini-based clinical description generation", "Medical relevance check before output", "Retry with fallback model handling", "Readable cleaned report formatting"],
+    problem: "Medical image workflows often need fast, structured summaries, but raw AI output can be inconsistent and unsafe without validation.",
+    solution: "Implemented a guarded inference pipeline that validates files, generates clinically focused reports, applies relevance checks, and delivers clear UI feedback with robust retry behavior.",
+    liveUrl: "https://drive.google.com/file/d/1tdHBwC3Tjf3uSZSB26pQM83UKBCZKFCK/view?usp=sharing",
+    githubUrl: "https://github.com/Zeeshan5932/Medicine-Recognition-System",
+    videoUrl: "https://drive.google.com/file/d/1SZoSrF-3eCDtc8NN4FMgxrR9qUahF08v/preview"
+  },
+  {
+    category: "cv",
+    title: "Hand Tracking Using OpenCV",
+    description: "Real-time hand tracking project using OpenCV and MediaPipe for accurate landmark detection.",
+    longDescription:
+      "A real-time computer vision application that tracks hand landmarks from webcam input using MediaPipe and OpenCV. The project provides smooth landmark visualization and practical gesture-tracking foundations for interactive CV systems.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
+    tech: ["Python", "OpenCV", "MediaPipe"],
+    features: ["Real-time webcam hand tracking", "Accurate hand landmark detection", "Low-latency frame processing", "Visual overlay for tracked points", "Practical gesture-system foundation"],
+    problem: "Building interactive vision apps requires reliable hand landmark tracking that is both fast and robust in live camera streams.",
+    solution: "Used MediaPipe hand detection with OpenCV video processing to deliver consistent real-time tracking suitable for gesture-driven applications.",
+    liveUrl: "https://github.com/Zeeshan5932/Hand-Tracking-Using-Opencv",
+    githubUrl: "https://github.com/Zeeshan5932/Hand-Tracking-Using-Opencv"
+  },
+  {
+    category: "ai",
+    title: "Conversational RAG Chatbot",
+    description: "Streamlit chatbot with conversational memory and fast Groq-powered LLM responses.",
+    longDescription:
+      "A lightweight conversational chatbot built with Streamlit, LangChain, and Groq. It supports session-level conversation memory, fast responses via llama-3.1-8b-instant, and secure API key loading through environment variables using python-dotenv.",
+    image: "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=600&h=400&fit=crop",
+    tech: ["Python", "Streamlit", "LangChain", "langchain-groq", "python-dotenv"],
+    features: ["Clean Streamlit chat interface", "Session-based conversation memory", "Fast inference using Groq", "LangChain conversation pipeline", "Environment-based API key loading"],
+    problem: "Basic chat apps often lose context between turns and can feel slow without an optimized inference backend.",
+    solution: "Built a conversational RAG-ready chat flow with memory-aware interactions and Groq-backed low-latency responses for a smoother user experience.",
+    liveUrl: "https://conversational-chatbot-using-langchain.streamlit.app/",
+    githubUrl: "https://github.com/Zeeshan5932/Conversational-RAG-Chatbot"
+  },
+  {
     category: "ai",
     title: "ATSResumeChecker",
     description: "Comprehensive web app that analyzes resumes for ATS compatibility.",

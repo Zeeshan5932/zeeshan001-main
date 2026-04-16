@@ -437,6 +437,7 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
 const ProjectsPage = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const resumePdfPath = "/Zeeshan_Resume_ats.pdf";
 
   const filtered =
     activeCategory === "all"
@@ -461,7 +462,7 @@ const ProjectsPage = () => {
               </div>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="/Zeeshan_Resume_ats.pdf"
+                  href={resumePdfPath}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-primary text-primary-foreground hover:brightness-110 transition-all glow-primary"
@@ -469,7 +470,7 @@ const ProjectsPage = () => {
                   <FileText size={14} /> View CV
                 </a>
                 <a
-                  href="/Zeeshan_Resume_ats.pdf"
+                  href={resumePdfPath}
                   download
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold glass text-foreground glow-border-hover transition-all"
                 >

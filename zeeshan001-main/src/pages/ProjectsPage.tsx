@@ -65,19 +65,257 @@ const allProjects: Project[] = [
     githubUrl: "https://github.com/Zeeshan5932/hybrid-ai-attendance"
   },
   {
-    category: "ml",
-    title: "ML Projects",
-    description: "Collection of machine learning and data science projects based on Kaggle datasets.",
+    category: "ai",
+    title: "AI Research Assistant Agent",
+    description: "Agentic research assistant that searches papers, summarizes findings, and supports memory-aware conversations.",
     longDescription:
-      "A repository of practical ML implementations spanning regression, classification, feature engineering, and end-to-end model workflows using real competition-style datasets.",
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop",
-    tech: ["Python", "Machine Learning", "Deep Learning"],
-    features: ["Kaggle-based datasets", "Multiple ML workflows", "Reusable notebooks", "Data preprocessing examples", "Model comparison experiments"],
-    problem: "Learners and teams need a practical project bank to understand real ML pipelines from data preparation to evaluation.",
-    solution: "Compiled and structured multiple ML projects into one repository for faster learning, experimentation, and portfolio demonstration.",
+      "An agentic AI research assistant built with LangChain, FastAPI, and Streamlit. The system can search Arxiv papers, summarize technical research, and use autonomous tool-calling workflows to support students, researchers, and consultants. It combines an API backend with a conversational chat UI and is designed to be extensible toward PDF RAG pipelines and citation-aware responses.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+    tech: ["LangChain", "FastAPI", "Streamlit", "Python", "Arxiv API"],
+    features: ["Academic paper search (Arxiv)", "Agent-based reasoning workflows", "Research paper summarization", "Conversational memory", "Extensible architecture for PDF RAG and citations"],
+    problem: "Research discovery and literature review are time-consuming when search, summarization, and Q and A are spread across disconnected tools.",
+    solution: "Built an agentic assistant that unifies discovery, summarization, and contextual chat so users can move faster from papers to actionable insights.",
+    liveUrl: "https://github.com/Zeeshan5932/Ai-research-assistant",
+    githubUrl: "https://github.com/Zeeshan5932/Ai-research-assistant",
+    videoUrl: "https://drive.google.com/file/d/15VJcRUvF8A9g11fvxWVFJ-u9edLgLwyH/preview"
+  },
+  {
+    category: "ml",
+    title: "Card Fraud Detection",
+    description: "Fraud classification pipeline for identifying suspicious card transactions.",
+    longDescription:
+      "A Kaggle-style machine learning workflow for detecting fraudulent transactions with feature preprocessing, class imbalance handling, and performance-focused evaluation.",
+    image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&h=400&fit=crop",
+    tech: ["Python", "Pandas", "Scikit-learn", "Imbalanced Learning"],
+    features: ["Fraud classification baseline", "Class imbalance strategy", "Feature preprocessing pipeline", "Precision and recall optimization", "Model evaluation report"],
+    problem: "Financial fraud data is imbalanced, making it hard to identify rare fraudulent events accurately.",
+    solution: "Built a tuned classification workflow that improves fraud detection signal while reducing false positives.",
     liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
-    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Diabetes Prediction",
+    description: "Clinical-data ML model to predict diabetes risk from patient attributes.",
+    longDescription:
+      "A supervised learning project that predicts diabetes outcomes using medical indicators. The pipeline includes data cleaning, feature scaling, model comparison, and explainable performance analysis.",
+    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=400&fit=crop",
+    tech: ["Python", "Scikit-learn", "NumPy", "Pandas"],
+    features: ["Binary risk prediction", "Data cleaning and scaling", "Classifier benchmarking", "Confusion matrix analysis", "Health-focused interpretation"],
+    problem: "Early diabetes risk screening from tabular health data is difficult without predictive support.",
+    solution: "Implemented a robust ML classifier to estimate diabetes likelihood and support early decision making.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Drug Overdose Analysis",
+    description: "Predictive analysis of overdose-related patterns for public health insight.",
+    longDescription:
+      "A data science workflow focused on overdose-related indicators, combining exploratory analysis and machine learning to identify risk trends and support prevention-oriented interpretation.",
+    image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=600&h=400&fit=crop",
+    tech: ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
+    features: ["Exploratory trend analysis", "Risk-oriented feature engineering", "Predictive modeling", "Visual reporting", "Public health context"],
+    problem: "Overdose risk factors are multifaceted and hard to analyze consistently through manual methods.",
+    solution: "Created an ML-assisted pipeline to highlight meaningful risk patterns and improve analytic clarity.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Ecommerce Customer Analytics",
+    description: "Customer behavior analysis and predictive modeling for ecommerce datasets.",
+    longDescription:
+      "A practical machine learning project that analyzes ecommerce customer data for segmentation, behavior understanding, and predictive insights to support business strategy.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+    tech: ["Python", "Pandas", "Scikit-learn", "Seaborn"],
+    features: ["Customer behavior exploration", "Feature-driven modeling", "Business metric analysis", "Visual insight reporting", "Actionable segmentation"],
+    problem: "Ecommerce teams need data-driven insight to understand customer patterns and optimize decisions.",
+    solution: "Developed a full analysis and modeling pipeline to convert raw behavioral data into strategic insight.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Heart Disease Prediction",
+    description: "ML model for predicting heart disease from diagnostic indicators.",
+    longDescription:
+      "A healthcare machine learning project that classifies heart disease risk using structured clinical variables with careful model validation and interpretability-oriented metrics.",
+    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&h=400&fit=crop",
+    tech: ["Python", "Scikit-learn", "Pandas", "NumPy"],
+    features: ["Risk classification", "Feature importance analysis", "Model comparison", "Validation metrics", "Clinical-data preprocessing"],
+    problem: "Predicting cardiovascular risk from patient attributes is challenging with manual scoring alone.",
+    solution: "Implemented an ML approach that improves risk estimation consistency and supports early intervention analysis.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "House Price Prediction",
+    description: "Regression model for estimating property prices from housing features.",
+    longDescription:
+      "A regression-focused ML workflow for housing datasets with feature engineering, outlier treatment, and model tuning to predict property prices more accurately.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    tech: ["Python", "Scikit-learn", "XGBoost", "Pandas"],
+    features: ["Feature engineering for regression", "Price prediction modeling", "Error metric analysis", "Outlier handling", "Model tuning"],
+    problem: "Real-estate valuation is sensitive to many variables and difficult to model with simple rules.",
+    solution: "Built a robust regression pipeline that captures non-linear patterns and improves pricing accuracy.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Iris Flower Classification",
+    description: "Classic multiclass ML classifier for iris species prediction.",
+    longDescription:
+      "A foundational classification project using the Iris dataset to compare algorithms, evaluate multiclass metrics, and demonstrate clean end-to-end ML workflow practice.",
+    image: "https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=600&h=400&fit=crop",
+    tech: ["Python", "Scikit-learn", "Pandas"],
+    features: ["Multiclass classification", "Algorithm benchmarking", "Confusion matrix evaluation", "Feature visualization", "Baseline ML workflow"],
+    problem: "Learners need clear examples to understand multiclass model behavior and evaluation.",
+    solution: "Created a concise classification pipeline that demonstrates core ML concepts with reproducible results.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Playground Series Challenges",
+    description: "Competition-style ML experiments from Kaggle Playground datasets.",
+    longDescription:
+      "A set of iterative experiments on Kaggle Playground Series tasks focusing on feature engineering, model tuning, and leaderboard-oriented evaluation workflows.",
+    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&h=400&fit=crop",
+    tech: ["Python", "LightGBM", "XGBoost", "Scikit-learn"],
+    features: ["Competition-style experimentation", "Model ensembling", "Feature engineering cycles", "Cross-validation setup", "Performance tuning"],
+    problem: "Rapid ML competitions demand repeatable experimentation under tight iteration cycles.",
+    solution: "Built streamlined notebook pipelines to test ideas quickly and improve leaderboard performance.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "SMS Spam Detection",
+    description: "NLP text classifier for identifying spam versus legitimate SMS messages.",
+    longDescription:
+      "A natural language processing project that preprocesses message text, converts it into machine-readable vectors, and classifies SMS messages as spam or ham.",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
+    tech: ["Python", "NLP", "Scikit-learn", "TF-IDF"],
+    features: ["Text preprocessing pipeline", "TF-IDF vectorization", "Spam-ham classification", "Precision and recall tracking", "Lightweight NLP workflow"],
+    problem: "Manual filtering of spam messages is inefficient and unreliable at scale.",
+    solution: "Implemented an NLP-driven classifier that automatically detects spam and improves communication hygiene.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Skin Cancer Classification (Kaggle)",
+    description: "Image-classification experiments for skin lesion categorization.",
+    longDescription:
+      "A Kaggle-focused skin lesion classification study that explores image preprocessing and model training to distinguish skin lesion categories with deep learning.",
+    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&h=400&fit=crop",
+    tech: ["Python", "TensorFlow", "Keras", "Computer Vision"],
+    features: ["Lesion image preprocessing", "Classification model training", "Evaluation visualization", "Kaggle-ready workflow", "Medical imaging experimentation"],
+    problem: "Skin lesion datasets require careful preprocessing and modeling to get reliable classification performance.",
+    solution: "Built an iterative deep learning workflow to improve image-based lesion classification quality.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Titanic Survival Prediction",
+    description: "Classification model predicting passenger survival outcomes on Titanic dataset.",
+    longDescription:
+      "A classic structured-data ML project using feature engineering and supervised classification to predict Titanic passenger survival probabilities.",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop",
+    tech: ["Python", "Scikit-learn", "Pandas"],
+    features: ["Feature engineering from passenger data", "Binary classification", "Cross-validation", "Submission-ready workflow", "Model interpretation"],
+    problem: "The dataset mixes numerical and categorical features, making prediction quality highly dependent on preprocessing.",
+    solution: "Designed a clean preprocessing and classification pipeline that improves survival prediction reliability.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Unemployment Data Analysis",
+    description: "Data-driven analysis and forecasting exploration on unemployment indicators.",
+    longDescription:
+      "An analytics project focused on unemployment trends, statistical exploration, and baseline predictive modeling to understand macro-level labor patterns.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    features: ["Trend analysis", "Economic indicator exploration", "Visualization-focused reporting", "Forecasting baseline", "Data storytelling"],
+    problem: "Economic indicator datasets are large and noisy, making trend interpretation difficult without structured analysis.",
+    solution: "Built a clear analysis workflow that surfaces meaningful patterns and supports forecasting exploration.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Xray Detection",
+    description: "ML and vision-based X-ray image analysis experiments for diagnostic support.",
+    longDescription:
+      "A medical imaging project exploring X-ray detection workflows, including preprocessing, model experimentation, and prediction analysis for clinical-style data.",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop",
+    tech: ["Python", "TensorFlow", "OpenCV", "Keras"],
+    features: ["X-ray preprocessing pipeline", "Image classification experiments", "Model performance evaluation", "Prediction visualization", "Healthcare-focused workflow"],
+    problem: "X-ray interpretation support models need robust preprocessing and careful validation before useful deployment.",
+    solution: "Implemented an image ML workflow for X-ray data to improve diagnostic support experimentation.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Amazon Sales Analysis",
+    description: "Sales dataset analysis for demand patterns and revenue insights.",
+    longDescription:
+      "A business analytics project on Amazon-style sales data with exploratory analysis, feature understanding, and metric-driven insights for commercial decision support.",
+    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=400&fit=crop",
+    tech: ["Python", "Pandas", "Seaborn", "Matplotlib"],
+    features: ["Revenue pattern analysis", "Category-level insights", "Trend visualization", "Business KPI exploration", "Data cleaning and transformation"],
+    problem: "Retail datasets include many interacting factors that are difficult to translate into clear business actions.",
+    solution: "Created a structured analytics pipeline that turns transactional data into actionable sales insight.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Car Price Prediction",
+    description: "Regression-based price estimation model for used and new vehicles.",
+    longDescription:
+      "A machine learning regression project that predicts car prices using engineered vehicle features and model tuning across multiple regression algorithms.",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop",
+    tech: ["Python", "Scikit-learn", "Pandas", "XGBoost"],
+    features: ["Vehicle feature engineering", "Regression benchmarking", "Price error analysis", "Model tuning", "Prediction workflow"],
+    problem: "Accurate car valuation requires handling many non-linear relationships across vehicle attributes.",
+    solution: "Implemented a tuned regression pipeline that improves prediction quality and valuation consistency.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "Digit Recognizer",
+    description: "Handwritten digit recognition using image classification techniques.",
+    longDescription:
+      "A vision-oriented machine learning project for recognizing handwritten digits from image data, with preprocessing and model training inspired by Kaggle competition workflows.",
+    image: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=600&h=400&fit=crop",
+    tech: ["Python", "TensorFlow", "Keras", "NumPy"],
+    features: ["Digit image preprocessing", "Classification model training", "Prediction accuracy tracking", "Competition-style workflow", "Visual result checks"],
+    problem: "Handwritten character variation makes robust recognition challenging for simple baselines.",
+    solution: "Built a trained image classifier that captures handwritten patterns and improves digit prediction reliability.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
+  },
+  {
+    category: "ml",
+    title: "K-Means Clustering",
+    description: "Unsupervised clustering project for discovering structure in unlabeled data.",
+    longDescription:
+      "An unsupervised learning project using K-Means to cluster observations, evaluate segment quality, and interpret hidden patterns for exploratory analysis tasks.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+    features: ["Unsupervised segmentation", "Cluster visualization", "Elbow-method tuning", "Pattern discovery", "Interpretation-focused analysis"],
+    problem: "Unlabeled datasets make it difficult to identify meaningful group structures without clustering methods.",
+    solution: "Applied K-Means with diagnostic evaluation to uncover interpretable groups for downstream decision support.",
+    liveUrl: "https://github.com/Zeeshan5932/Kaggle-Project",
+    githubUrl: "https://github.com/Zeeshan5932/Kaggle-Project"
   },
   {
     category: "cv",
@@ -106,7 +344,8 @@ const allProjects: Project[] = [
     problem: "Early skin lesion screening can be time-consuming and difficult to scale when only manual review is available.",
     solution: "Built a deep learning-powered classification app that provides fast Benign/Malignant predictions through an accessible web interface.",
     liveUrl: "https://github.com/Zeeshan5932/Skin_cancer_detection",
-    githubUrl: "https://github.com/Zeeshan5932/Skin_cancer_detection"
+    githubUrl: "https://github.com/Zeeshan5932/Skin_cancer_detection",
+    videoUrl: "https://drive.google.com/file/d/1LHgFaZZ33zY2TyR6gB4yNQAw9jnRxA5Q/preview"
   },
   {
     category: "cv",

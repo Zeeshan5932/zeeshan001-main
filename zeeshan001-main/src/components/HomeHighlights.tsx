@@ -15,11 +15,7 @@ const sectionHeaderVariants = {
 
 const sectionHeaderItem = {
   hidden: { opacity: 0, y: 14 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: [0.25, 0.4, 0.25, 1] },
-  },
+  visible: { opacity: 1, y: 0 },
 };
 
 const highlights = [
@@ -27,9 +23,9 @@ const highlights = [
     icon: Brain,
     label: "About Me",
     href: "/about",
-    color: "from-teal-500/24 to-cyan-500/10",
-    border: "hover:border-teal-500/45",
-    iconColor: "text-teal-300",
+    color: "from-blue-500/20 to-cyan-500/10",
+    border: "hover:border-blue-500/40",
+    iconColor: "text-blue-300",
     description:
       "AI Engineer & ML Specialist with 1+ years building production intelligent systems. Based in Pakistan.",
     tags: ["AI Engineer", "ML Specialist", "Available for work"],
@@ -38,9 +34,9 @@ const highlights = [
     icon: FolderGit2,
     label: "Projects",
     href: "/projects",
-    color: "from-amber-500/22 to-orange-500/10",
-    border: "hover:border-amber-500/45",
-    iconColor: "text-amber-300",
+    color: "from-indigo-500/20 to-violet-500/10",
+    border: "hover:border-indigo-500/40",
+    iconColor: "text-indigo-300",
     description:
       "Kaggle competitions, ML pipelines, deep learning models, and production-grade AI applications.",
     tags: ["Kaggle", "Deep Learning", "LLMs"],
@@ -49,9 +45,9 @@ const highlights = [
     icon: Briefcase,
     label: "Experience",
     href: "/experience",
-    color: "from-cyan-500/20 to-sky-500/10",
-    border: "hover:border-cyan-500/45",
-    iconColor: "text-cyan-300",
+    color: "from-emerald-500/18 to-teal-500/10",
+    border: "hover:border-emerald-500/40",
+    iconColor: "text-emerald-300",
     description:
       "3 roles across AI automation, ML engineering, and software development in top tech environments.",
     tags: ["Efaida Technologies", "Oasis Infobyte", "Seeker Institute"],
@@ -60,9 +56,9 @@ const highlights = [
     icon: Code2,
     label: "Skills",
     href: "/skills",
-    color: "from-lime-500/20 to-emerald-500/10",
-    border: "hover:border-lime-500/40",
-    iconColor: "text-lime-300",
+    color: "from-sky-500/20 to-cyan-500/10",
+    border: "hover:border-sky-500/40",
+    iconColor: "text-sky-300",
     description:
       "Python, TensorFlow, PyTorch, LangChain, FastAPI, Docker, and the full modern AI/ML stack.",
     tags: ["Python", "PyTorch", "LangChain"],
@@ -71,9 +67,9 @@ const highlights = [
     icon: BarChart3,
     label: "Services",
     href: "/about#services",
-    color: "from-orange-500/22 to-yellow-500/10",
-    border: "hover:border-orange-500/45",
-    iconColor: "text-orange-300",
+    color: "from-amber-500/20 to-rose-500/10",
+    border: "hover:border-amber-500/40",
+    iconColor: "text-amber-300",
     description:
       "Custom AI models, automation pipelines, chatbots, data analytics, and API integrations.",
     tags: ["AI Models", "Automation", "APIs"],
@@ -82,9 +78,9 @@ const highlights = [
     icon: Mail,
     label: "Contact",
     href: "/contact",
-    color: "from-teal-500/20 to-emerald-500/10",
-    border: "hover:border-teal-500/45",
-    iconColor: "text-teal-300",
+    color: "from-cyan-500/18 to-blue-500/10",
+    border: "hover:border-cyan-500/40",
+    iconColor: "text-cyan-300",
     description:
       "Open to freelance projects, full-time roles, and collaborations. Let's build something great.",
     tags: ["datascientist5932@gmail.com", "Pakistan"],

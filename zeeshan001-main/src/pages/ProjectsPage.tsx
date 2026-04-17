@@ -479,11 +479,11 @@ const categories = [
 type Category = (typeof categories)[number]["key"];
 
 const categoryMeta: Record<string, { color: string; label: string }> = {
-  ai: { color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30", label: "AI" },
-  ml: { color: "bg-blue-500/15 text-blue-400 border-blue-500/30", label: "Machine Learning" },
-  cv: { color: "bg-rose-500/15 text-rose-400 border-rose-500/30", label: "Computer Vision" },
-  automation: { color: "bg-amber-500/15 text-amber-400 border-amber-500/30", label: "Automation" },
-  data: { color: "bg-cyan-500/15 text-cyan-400 border-cyan-500/30", label: "Data Platform" }
+  ai: { color: "bg-blue-500/15 text-blue-400 border-blue-500/30", label: "AI" },
+  ml: { color: "bg-violet-500/15 text-violet-400 border-violet-500/30", label: "Machine Learning" },
+  cv: { color: "bg-cyan-500/15 text-cyan-400 border-cyan-500/30", label: "Computer Vision" },
+  automation: { color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30", label: "Automation" },
+  data: { color: "bg-amber-500/15 text-amber-400 border-amber-500/30", label: "Data Platform" }
 };
 
 // ── Modal ─────────────────────────────────────────────────────────────────

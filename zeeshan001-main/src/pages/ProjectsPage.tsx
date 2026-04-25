@@ -207,6 +207,29 @@ const allProjects: Project[] = [
   },
   {
     category: "ml",
+    title: "Movie Recommendation System",
+    description: "Content-based movie recommendation web app built with Streamlit.",
+    longDescription:
+      "A content-based movie recommendation web app where users select a movie and instantly get similar movie suggestions with posters, ratings, release year, genres, and overview details. The app uses a precomputed similarity matrix, TMDB metadata integration, and a clean interactive Streamlit interface.",
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=400&fit=crop",
+    tech: ["Python", "Streamlit", "Pandas", "Requests", "Pickle", "TMDB API"],
+    features: [
+      "Content-based recommendations using a precomputed similarity matrix",
+      "Interactive Streamlit UI with responsive movie cards",
+      "TMDB poster and metadata integration",
+      "Fallback thumbnail when poster is unavailable",
+      "Adjustable recommendations (5 to 10)",
+      "Adjustable grid layout (2 to 5 cards per row)",
+      "Per-movie details toggle (genres and overview)",
+      "Session state support for persistent results"
+    ],
+    problem: "Users need quick and relevant movie suggestions with rich details, but many simple recommenders provide only titles without context.",
+    solution: "Built a content-based Streamlit recommender that delivers similar movies with posters and metadata, while keeping the UI interactive and configurable for better user experience.",
+    liveUrl: "https://github.com/Zeeshan5932/Movie_recommendation",
+    githubUrl: "https://github.com/Zeeshan5932/Movie_recommendation"
+  },
+  {
+    category: "ml",
     title: "Skin Cancer Classification (Kaggle)",
     description: "Image-classification experiments for skin lesion categorization.",
     longDescription:

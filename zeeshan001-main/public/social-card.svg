@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="zy-grad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="hsl(222, 89%, 65%)" />
+      <stop offset="1" stop-color="hsl(176, 82%, 48%)" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="hsl(222, 89%, 65%)" stop-opacity="0.18" />
+      <stop offset="1" stop-color="hsl(222, 89%, 65%)" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="hsl(224, 40%, 7%)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <rect x="80" y="115" width="140" height="140" rx="32" fill="hsl(224, 40%, 10%)" />
+  <rect x="81.5" y="116.5" width="137" height="137" rx="30.5" stroke="url(#zy-grad)" stroke-width="3" />
+  <text
+    x="150"
+    y="185"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="800"
+    font-size="56"
+    fill="url(#zy-grad)"
+  >ZY</text>
+
+  <text
+    x="80"
+    y="330"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="800"
+    font-size="64"
+    fill="#f8fafc"
+  >Zeeshan Younas</text>
+
+  <text
+    x="80"
+    y="385"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="600"
+    font-size="32"
+    fill="url(#zy-grad)"
+  >AI Engineer &amp; Data Scientist</text>
+
+  <text
+    x="80"
+    y="440"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="400"
+    font-size="24"
+    fill="#94a3b8"
+  >Building production-grade AI and ML systems</text>
+</svg>

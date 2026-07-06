@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="zy-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="hsl(222, 89%, 65%)" />
+      <stop offset="1" stop-color="hsl(176, 82%, 48%)" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="hsl(224, 40%, 7%)" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" stroke="url(#zy-grad)" stroke-width="2" />
+  <text
+    x="32"
+    y="32"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="800"
+    font-size="24"
+    fill="url(#zy-grad)"
+  >ZY</text>
+</svg>

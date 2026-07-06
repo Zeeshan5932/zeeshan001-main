@@ -1,17 +1,19 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, User, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Skills", href: "/skills" },
-  { label: "Projects", href: "/projects" },
-  { label: "Experience", href: "/experience" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" },
 ];
+
+const sectionIds = ["home", "about", "skills", "projects", "experience", "process", "contact"];
 
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/Zeeshan5932" },
@@ -22,10 +24,13 @@ const socialLinks = [
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState("home");
   const profileRef = useRef<HTMLDivElement>(null);
 
   // Scroll progress + background
@@ -38,6 +43,59 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Scrollspy: highlight the nav item for the section currently in view
+  useEffect(() => {
+    if (!isHome) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          setActiveSection(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [isHome]);
+
+  // Scroll to the target section, accounting for the fixed navbar height
+  const scrollToSection = useCallback((id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const navHeight = 64;
+    const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top, behavior: "smooth" });
+  }, []);
+
+  // If we navigated here from another page carrying a #hash, scroll once mounted
+  useEffect(() => {
+    if (isHome && location.hash) {
+      const id = location.hash.slice(1);
+      requestAnimationFrame(() => scrollToSection(id));
+    }
+  }, [isHome, location.hash, scrollToSection]);
+
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent, href: string) => {
+      const id = href.split("#")[1];
+      if (isHome) {
+        e.preventDefault();
+        scrollToSection(id);
+      } else {
+        e.preventDefault();
+        navigate(href);
+      }
+    },
+    [isHome, navigate, scrollToSection]
+  );
 
   // Click-away close for profile dropdown
   const handleClickOutside = useCallback((e: MouseEvent) => {
@@ -97,14 +155,13 @@ const Navbar = () => {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1 glass rounded-full px-2 py-1 border border-border/50 shadow-lg shadow-background/15">
             {navItems.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? location.pathname === "/"
-                  : location.pathname.startsWith(item.href);
+              const sectionId = item.href.split("#")[1];
+              const isActive = isHome && activeSection === sectionId;
               return (
                 <Link
                   key={item.href}
                   to={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full ${
                     isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                   }`}
@@ -203,15 +260,16 @@ const Navbar = () => {
                     <ThemeToggle />
                   </div>
                 {navItems.map((item) => {
-                  const isActive =
-                    item.href === "/"
-                      ? location.pathname === "/"
-                      : location.pathname.startsWith(item.href);
+                  const sectionId = item.href.split("#")[1];
+                  const isActive = isHome && activeSection === sectionId;
                   return (
                     <Link
                       key={item.href}
                       to={item.href}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={(e) => {
+                        setMobileOpen(false);
+                        handleNavClick(e, item.href);
+                      }}
                       className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                         isActive
                           ? "text-foreground bg-secondary/60"

@@ -527,7 +527,7 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
       onClick={(e) => e.stopPropagation()}
     >
       {/* Hero image */}
-      <div className="relative">
+      <div className="relative" id="all-projects">
         <img
           src={project.image}
           alt={project.title}

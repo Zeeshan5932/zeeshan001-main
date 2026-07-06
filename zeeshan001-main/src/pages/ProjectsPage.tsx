@@ -515,7 +515,7 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-background/80 backdrop-blur-md"
+    className="fixed inset-0 z-[60] flex items-center justify-center p-4 pt-24 pb-6 bg-background/80 backdrop-blur-md"
     onClick={onClose}
   >
     <motion.div
@@ -523,11 +523,11 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
       animate={{ scale: 1, opacity: 1, y: 0 }}
       exit={{ scale: 0.93, opacity: 0, y: 24 }}
       transition={{ type: "spring", damping: 28, stiffness: 350 }}
-      className="glass-strong rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+      className="glass-strong rounded-2xl max-w-3xl w-full max-h-[calc(100vh-7rem)] overflow-y-auto shadow-2xl"
       onClick={(e) => e.stopPropagation()}
     >
       {/* Hero image */}
-      <div className="relative" id="all-projects">
+      <div className="relative">
         <img
           src={project.image}
           alt={project.title}
